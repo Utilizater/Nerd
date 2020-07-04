@@ -1,0 +1,29 @@
+type Query {
+  words: [Word!]
+  users: [User!]
+}
+
+type Mutation {
+  addWord(data: wordInput!): Word!
+  editWord(
+    edited_eng_word: String!
+    new_eng_word: String!
+    new_ru_word: String!
+  ): Word!
+  deleteWord(eng_word: String!): Word!
+}
+
+type User {
+  id: ID!
+  login: String!
+}
+
+type Word {
+  eng_word: String!
+  ru_word: String!
+}
+
+input wordInput {
+  eng_word: String!
+  ru_word: String!
+}
